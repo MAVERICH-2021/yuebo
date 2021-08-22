@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>减法合成器实用教程</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>	
+
+<iframe src="tips/tips_main.html" id="tips"></iframe>	
+
+<div class="synthesizer">
+	<div class="fader">
+		<p class="paraName">Semitone</p>
+		<span id="valBox">0</span>
+		<input type="range" min="5" max="10" step="1" onchange="redirect('tips/tips_semitone.html')" oninput="showVal(this.value)"><!--use '' to enter a string parameter; The difference is that the oninput event occurs immediately after the value of an element has changed, while onchange occurs when the element loses focus, after the content has been changed.-->																			
+	</div>
+</div>
+	<script>  //fader's function
+		function showVal(newVal){   //change the displayed number
+			document.getElementById("valBox").innerHTML=newVal;
+		}
+		function redirect(e){    //change the src of iframe Tips
+			document.getElementById("tips").setAttribute("src",e);
+		}
+	</script>
+</body>
+</html>
